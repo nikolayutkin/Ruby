@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+	table,td,tr {border: 1px solid black; text-aligh: center; padding: 2px;}
+</style>
+<head>
+  <title>Lab 12</title>
+  <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= link_to "Logout", '/lr/exit' %> |
+<%= link_to "Existing users", '/users' %> |
+<%= link_to "New user", '/users/new' %> |
+<%= link_to "Login" , '/' %></br>
+<%= "Logged as #{User.find_by_id(session[:current_user_id]).login}" if session[:current_user_id] %>
+<%= 'No login' if !session[:current_user_id] %>
+
+<%= yield %>
+
+</body>
+</html>

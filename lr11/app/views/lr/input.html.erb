@@ -1,0 +1,10 @@
+<h1>Data input</h1>
+<%= form_tag("/lr/view", :method => "get", :name => "input") do %>
+<%= label_tag("Value :") %>
+<%= text_field_tag(:val) %> <br/>
+<br/>
+<%= submit_tag("Push for html", :onclick => 'input.action="/lr/view.html"') %>
+<%= submit_tag("Push for xml", :onclick => 'input.action="/lr/view.xml"') %>
+<% end %>
+<br/>
+<%= link_to "Last added number", "/lr/last" %>

@@ -1,0 +1,135 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+  
+  
+	body 
+	{
+		background: URL("fon.jpg");
+	}
+	
+
+	#Main_box 
+	{
+		margin: 0 auto;
+		width: 1000px;
+		height: 800px;
+		z-index: -10; 
+	}
+
+
+
+	#Box_0 
+	{
+		position:absolute;
+		margin-left: 0px;
+		top: 8px;
+		width: 1000px;
+		height: 200px;
+		z-index: 0;
+	}
+
+
+	#Box_1 
+	{
+		position:absolute;
+		margin-left: 0px;
+		top: 208px;
+		width: 300px;
+		height: 300px;
+		z-index: 2;
+	}
+
+/*фончик за текстиком*/
+	#Box_2
+	{
+		position:absolute;
+		background-color: #FFFFF0;
+		margin-left: 300px;
+		top: 208px;
+		width: 680px;
+		height: 290px;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-top: 10px;
+		z-index: 3;
+		opacity: 0.7; filter: alpha(opacity = 70);
+	}
+
+
+	#Box_3 
+	{
+		position:absolute;
+		background-color: #0e0e1d;
+		margin-left: 0px;
+		top: 530px;
+		width: 980px;
+		height: 90px;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-top: 10px;
+		z-index: 4;
+		opacity: 0.7; filter: alpha(opacity = 70);
+	}
+
+
+	#Box_4 
+	{
+		position:absolute;
+		background-color: #1a4140;
+		margin-left: 0px;
+		top: 650px;
+		width: 980px;
+		height: 180px;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-top: 10px;
+		z-index: 5;
+		opacity: 0.7; filter: alpha(opacity = 70);
+	}
+	
+	i.button 
+	{
+		display: inline-block;
+		color: white;
+		text-decoration: none;
+		padding: .5em 2em;
+		outline: none;
+		border-width: 2px 0;
+		border-style: solid none;
+		border-color: #FDBE33 #000 #D77206;
+		border-radius: 6px;
+		background: linear-gradient(#F3AE0F, #E38916) #BA55D3;
+		transition: 0.2s;
+	} 
+	
+	i.button:hover { background: linear-gradient(#BA55D3;, #f59500) #BA55D3;}
+	i.button:active { background: linear-gradient(#f59500, #f5ae00) #BA55D3; }
+	
+	.class_1 
+	{
+		font-family: Courier new;
+		color: #E6B57D;
+			font-size: 30px;
+	}	
+	
+		.class_2
+	{
+		font-family: Courier new;
+		color: #000080;
+			font-size: 30px;
+	}	
+	
+  

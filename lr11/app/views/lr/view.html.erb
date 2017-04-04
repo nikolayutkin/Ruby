@@ -1,0 +1,17 @@
+<h1>Results</h1>
+<table>
+<tr>
+<th>№</th>
+<th>Mersenne prime</th>
+<th>Time created</th>
+</tr>
+<% @res.each_with_index do |x, i| %>
+<tr>
+<td><%= i + 1 %></td>
+<td><%= x.value %></td>
+<td><%= x.created_at %></td>
+</tr>
+<% end %>
+</table>
+<%= link_to "Repeat calculation", "/lr/input" %>
+</br>

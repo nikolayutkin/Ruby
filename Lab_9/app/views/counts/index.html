@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+function show_res(data)
+var mas = data.value;
+var newTable = document.createElement("table");
+newTable.setAttribute("id","itemTable");
+var newRow = newTable.insertRow(0);
+var newCell = newRow.insertCell(0);
+newCell.innerHTML = "Номер";
+newCell.setAttribute("width", "30");
+newCell.setAttribute("height", "20");
+newCell = newRow.insertCell(1);
+newCell.setAttribute("width", "30");
+newCell.setAttribute("height", "20");
+newCell.innerHTML = "Значение";
+for (var i = 1; i <= mas.length; i++) {
+var newRow = newTable.insertRow(i);
+var newCell = newRow.insertCell(0);
+newCell.setAttribute("width", "20");
+newCell.setAttribute("height", "20");
+newCell.innerHTML = i-1;
+var newCell = newRow.insertCell(1);
+newCell.setAttribute("width", "20");
+newCell.setAttribute("height", "20");
+newCell.innerHTML = mas[i-1];
+}
+document.body.appendChild(newTable);
+end
+</html>

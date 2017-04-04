@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Практикум №2</title>
+        <meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <style type="text/css">
+            #ii
+            { 
+                margin-top: 15px;margin-left: 50px;
+            }
+            #i1
+            {
+                margin-bottom: 15px;
+            }
+            #k
+            {
+                margin-left: 50px;
+            }
+              #kkk
+            {
+                margin-left: 50px; color: crimson;
+            }
+            #q
+            {
+                display: table; border:1px solid  #000000;
+            }
+            #t
+            {
+                display:table-row;
+            }
+            #qq
+            {
+                display:table-cell;border:1px solid  #000000;width:400px;height:100;
+                
+            }
+            #tt
+            {
+                 display:table-cell;border:1px solid  #000000;
+            }
+             #qq
+            {
+                display:table-cell;border:1px solid  #000000;width:550px;height:auto;
+            }
+            #p
+            {
+                 display:table-cell;border:1px solid  #000000;width:350px;height:auto;
+            }
+            #e
+            {
+                color: crimson;margin-left: 50px;
+            }
+             #z
+            {
+                margin-top:20px;width:100px;height:20px;
+            }
+            #tab1
+            {
+               margin-left: 50px;
+            }
+            .era
+            {
+                cursor: pointer;
+            }
+        </style>
+        <script type="text/javascript">
+            var sum=0;
+            function print1()
+            { 
+                t=document.getElementById("tt").value;
+                n=document.getElementById("num").value;
+                var tbody = document.getElementById('tab1');
+                var i=0,w=0,v=0;
+                w=tbody.rows.length;
+                 while(i!=w)
+                {   
+                    if(tbody.rows[i].cells[0].innerHTML==t)
+                        v=i;
+                    i++;
+                }
+                if(v==0)
+                {
+                var row = document.createElement('tr');
+                tbody.appendChild(row);
+                var td1 = document.createElement('td');
+                var td2 = document.createElement('td');
+                td1.setAttribute("OnClick","mouseclick(this)");
+                td2.setAttribute("onMouseOut","mouseOut(this)");
+                td2.setAttribute("onMouseOver","mouseOver(this)");
+                td1.className="era";
+                row.appendChild(td1);
+                row.appendChild(td2);
+                td1.innerHTML=t;
+                td2.innerHTML=n;
+                }
+                
+                
+                
+            }
+            function pr()
+            {
+                r=document.getElementById("st");
+                r.value=sum;
+            }
+            function mouseOver(el)
+            {
+                el.style.backgroundColor = "yellow";
+            }
+             function mouseOut(el)
+            {
+                el.style.backgroundColor = "white";
+            }
+            function mouseclick(el)
+            {
+               var i=0;var v=0;var d=0;
+                var tbod=document.getElementById('k');
+                 w=tbod.rows.length;
+                while(i!=w)
+                {   
+                    if(tbod.rows[i].cells[0].innerHTML==el.innerHTML)
+                        v=i;
+                    i++;
+                }
+                 if(v!=0){
+                          d= parseInt(tbod.rows[v].cells[2].innerHTML)+1;
+                        tbod.rows[v].cells[2].innerHTML=d;
+                        sum=sum+parseInt(el.parentElement.cells[1].innerHTML);
+                        }
+                    else
+                    {
+                        var row1=document.createElement('tr');
+                        tbod.appendChild(row1);
+                        var td3 = document.createElement('td');
+                        var td4 = document.createElement('td');
+                        var td5 = document.createElement('td');
+                        row1.appendChild(td3);
+                        row1.appendChild(td4);
+                        row1.appendChild(td5);
+                        td3.innerHTML=el.innerHTML;
+                        td4.innerHTML=el.parentElement.cells[1].innerHTML;
+                        td5.innerHTML=1;
+                        sum=sum+parseInt(el.parentElement.cells[1].innerHTML);
+                    }
+                
+                   
+            }
+        </script>
+    </head>
+    <body>
+        <div id="q" >
+            <div id="t">
+                <div id="qq" >
+                    <div id="i1">
+
+                        Наименование товара<input type="text" autofocus id="tt" > <br /><br />
+                        Стоимость товара <input type="text" id="num" > <br />
+                        <input type="button" value="Добавить" onClick="print1()" id="z"> 
+                    </div>
+                </div>
+                 <div id="p" >
+                   <p id="e">Список товаров</p>
+                    <table id="tab1" border="1" >
+                        <tr>
+                            <th>Наименование</th>
+                            <th>Стоимость</th>
+                        </tr>
+                    </table>    
+                </div>
+                <div id="tt" >
+                    <p id="kkk">Корзина</p>
+                    <table  border="1" id="k" >
+                        <tr>
+                            <th>Наименование</th>
+                            <th>Стоимость</th>
+                            <th>Кол-во</th>
+                        </tr>
+                    </table> 
+                     <div id="ii">
+                        <input type="button"  value="Расчитать общую стоимость" onClick="pr()" > <br /> <br /> 
+                        Общая стоимость: <input type="text" id="st" readonly  >
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>DOMINO'S PIZZA</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+ 
+  <%= csrf_meta_tags %>
+
+  <%= favicon_link_tag 'favicon.ico' %>
+  
+</head>
+<body>
+
+  <% if session[:current_user_id] == User.find_by_login('programmer').id %>
+    <%= render :text => 'You are main user' %>
+  <% end %>
+
+<% if session[:current_user_id] %>
+    <%= link_to 'Exit','/login/destroy' %>
+<% end %>
+
+
+<%= yield %>
+
+</body>
+</html>

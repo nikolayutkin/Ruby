@@ -1,0 +1,8 @@
+<div>
+  <%= form_tag('/check', :method => 'get') do %>
+      <%= label_tag('Введите число :') %>
+      <%= text_field_tag(:a) %>
+      <br/><br/>
+      <%= submit_tag('Подтвердить') %>
+  <% end %>
+</div>

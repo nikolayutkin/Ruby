@@ -1,0 +1,93 @@
+<div id="Main_box">
+
+<div id="Box_0">
+	<img src="title111.png" width="1000" height="200"> /*картинка шапка*/
+</div>
+
+
+<div id="Box_1">
+	<img src="a1.jpg" width="300" height="300" id="thisisapict_new1"> 
+</div>
+
+
+<div id="Box_2"> 
+	<table>
+		<tr>
+			<td>
+				<i class="button"  onclick = "f1('a1.jpg',1)" >Гавайская &nbsp &nbsp &nbsp </i> <br/> <br/>
+				<i class="button"  onclick = "f1('a2.jpg',2)">Маргарита  &nbsp &nbsp &nbsp &nbsp </i> <br/> <br/>
+				<i class="button"  onclick = "f1('a3.jpg',3)">Барбекю &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</i> <br/> <br/>
+				<i class="button"  onclick = "f1('a5.jpg',4)">Цезарь &nbsp &nbsp </i> <br/> <br/>
+			</td>
+			<td>
+				 &nbsp  &nbsp    &nbsp  &nbsp     &nbsp  &nbsp    &nbsp  &nbsp     &nbsp  &nbsp    &nbsp  &nbsp 
+				 &nbsp  &nbsp    &nbsp  &nbsp     &nbsp  &nbsp    &nbsp  &nbsp     &nbsp  &nbsp    &nbsp  &nbsp 				 			
+			</td>
+			<td id = "ttt" align = "left">
+				
+			</td>
+		</tr>
+	</table>
+	
+</div>
+
+<script language = "JavaScript">
+
+	var x = document.getElementById("Box_1");
+	var t = document.getElementById("ttt");
+	
+	var s1 = "Гавайская. Ананас, Ветчина, Сыр Моцарелла";
+	var s2 = "Маргарита. Сыр Моцарелла";
+	var s4 = "Цезарь. Куриное филе, сыры Моцарелла и Пармезан, белый соус, айсберг, маслины."
+	var s3 = "Чикен барбекю. Грибы, Курица, Лук, Соус Барбекю, Сыр Моцарелла";
+	
+	t.innerHTML = "<b><span class = 'class_1'>" + s1 + "</span></b>";
+	
+	
+	function f1(s,n)
+	{
+	    document.getElementById("thisisapict_new1").src = s;
+		if(n == 1) t.innerHTML = "<b><span class = 'class_1'>" + s1 + "</span></b>";
+		if(n == 2) t.innerHTML = "<b><span class = 'class_1'>" + s2 + "</span></b>";
+		if(n == 3) t.innerHTML = "<b><span class = 'class_1'>" + s3 + "</span></b>";
+		if(n == 4) t.innerHTML = "<b><span class = 'class_1'>" + s4 + "</span></b>";
+	}
+
+</script>
+
+
+<div id="Box_3" align = "center">
+	<span class = 'class_1'><h1>Заказ пиццы</h1></span>
+</div>
+
+
+<div id="Box_4">
+
+  <font color = "#FFFFFF">  
+    <% if session[:current_user_id] == User.find_by_login('programmer').id %>
+    <%= render :text => 'You are main user' %>
+  
+	<h2> <a href="/project/view.xml">Посмотреть базу данных</a> </h2><% end %>
+  </font>
+
+		<br/>
+		<br/>
+
+		<%= form_tag('/project/view', :method => 'get') do %>
+			<b>
+				<h2>
+					<font color = "#FFFFFF">
+						Введите контактные данные: ( телефон_пицца_адрес(улица,дом,квартира)), с вами свяжутся наши  для уточнения информации.
+					</font>
+				</h2>
+			</b>
+			<%= text_field_tag(:ttt) %>
+			<%= submit_tag (' Ввод ')  %>
+		<% end %>
+		
+</div>
+
+
+</div>
+
+

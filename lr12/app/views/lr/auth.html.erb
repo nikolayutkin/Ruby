@@ -1,0 +1,14 @@
+<% if !current_user %>
+<h1>Authorization</h1>
+<%= form_tag("/lr/login", :method => "get") do %>
+<%= label_tag("Login :") %>
+<%= text_field_tag(:l) %> <br/>
+<%= label_tag("Password :") %>
+<%= text_field_tag(:p) %> <br/>
+<br/>
+<%= link_to 'Create an account', '/users/new' %><br/>
+<%= submit_tag("Log in") %>
+<% end %>
+<% end %>
+<br/>
+<%= link_to 'Calc Mersenne numbers', '/lr/in' %>

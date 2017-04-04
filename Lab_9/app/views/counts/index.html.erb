@@ -1,0 +1,12 @@
+    <%= form_tag("/counts/view.json", :method => "get", remote: true, id: 'counts_form') do %>
+
+        <tr>
+          </br>
+          <td><%= label_tag("Введите число:") %></td>
+          <td><%= text_field_tag(:a) %><br/></td>
+        </tr>
+
+        <tr><br/><%= submit_tag "Получить результат", id: 'btn'   %></tr>
+        </br></br>
+    <% end %>
+<div id="res"></div>

@@ -1,0 +1,36 @@
+<div align = "center">
+
+
+<span class = "class_2">
+	<h1>Ticket to the space</h1>
+
+	<br/>
+
+	<h2>You need to pass the avtorization</h2>
+
+	<br/>
+	<br/>
+
+	<%= form_tag('../login/create', :method => 'post') do %>
+		<b><%= label_tag 'login' %></b>
+		<br/>
+		<%= text_field_tag :login %>
+		<br/>
+		<br/>
+		<b><%= password_field_tag(:password) %></b>
+		<br/>
+		<br/>
+		<%= submit_tag 'Enter' %>
+		<br/>
+		<br/>
+	<% end %>
+
+
+
+
+<h2> 
+    
+	<%= link_to 'I have not account','/users/new' %>
+</h2>
+</span>
+</div>

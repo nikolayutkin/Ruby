@@ -1,0 +1,7 @@
+<h1>Data input</h1>
+<%= form_tag("/lr/out", :method => "get") do %>
+<%= label_tag("Value :") %>
+<%= text_field_tag(:val) %> <br/>
+<br/>
+<%= submit_tag("Calculate") %>
+<% end %>

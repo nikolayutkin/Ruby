@@ -1,0 +1,12 @@
+<table border="2">
+  <caption>Найденные числа Мерсена :</caption>
+  <tr>
+    <th>№</th>
+    <th>Число</th>
+  </tr>
+  <% @new.each_with_index do |x,i| %>
+      <% if x != nil %>
+        <tr><td><%= i + 1 %></td><td><%= x %></td></tr>
+      <%end %>
+<% end %>
+</table>

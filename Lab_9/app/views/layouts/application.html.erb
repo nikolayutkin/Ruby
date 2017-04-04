@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag    "application", media: "all",
+                               "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "counts", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <script>
+      $(document).ready(function(){
+        $("#counts_form").bind("ajax:success",
+            function(xhr, data, status) {
+              // Data is already an object
+              show_result(data)
+            })
+      })
+    </script>
+  </head>
+        <%= yield %>
+</html>

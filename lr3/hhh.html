@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+    <head>
+          <meta meta charset="utf-8">
+        <title>Дерево</title>
+        <style type="text/css">
+            #q
+            {
+                margin-left: 150px;
+            }
+            #tt
+            {
+                margin-left: 100px;
+            }
+             #v
+            {
+            }
+            #qq
+            {
+                display: table; border:1px solid  #000000;
+            }
+            #q1
+            {
+                display:table-cell; border:1px solid  #000000;
+            }
+            #q2
+            {
+                display:table-cell;  border:1px solid  #000000;width: 200;
+            }
+            
+        </style
+        </style>
+        <script type="text/javascript">
+            var a = new Array();
+            var i=1;
+            var k=0;
+            function tree(e)
+            {
+                t=document.getElementById("tt");
+                if(e.nodeType==1)
+                { 
+                    while(k!=i)
+                   {
+                        a.push("&nbsp");
+                       a.push("&nbsp");
+                       a.push("&nbsp");
+                        k++;
+                   }
+                    k=0;
+                    a.push(e.nodeName+"<br/>");
+                    console.log(e.nodeName);
+                }
+              var child=e.childNodes;
+                for(var j=0;j<child.length;j++)
+                {
+                    i++;
+                     tree(child[j]);
+                    i--;
+                }
+            }
+            function p()
+            {
+             t=document.getElementById("tt");
+                for(var i=0;i<a.length;i++)
+                t.innerHTML+=a[i];
+             v.style.visibility="hidden";
+            }
+        </script>
+    </head>
+    <body  onload="tree(document)">
+        <div id="qq">
+            <div  id="q1">
+                <h1>Заголовочек</h1>
+                <p>Слово 1</p>
+                <p>Cлово 2</p>
+                <div id="q" >
+                    <p>Слово 3  </p>
+                    <p>Слово 4  </p>
+                    <p>Слово 5  </p>
+                </div>
+                <p>Слово 6</p>
+                <p>Cлово 7</p>
+                <input type="button" id="v"  value="обход дерева" onclick="p()" /> <br /> <br /> 
+            </div>
+            <div  id="q2">
+                <div id="tt">
+                </div>
+            </div>
+                
+        </div>
+    </body>
+</html>
