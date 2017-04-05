@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Зачётная работа</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "https://api-maps.yandex.ru/2.1/?lang=ru_RU" %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= link_to "Вход", '/session/logout' %> | <%= link_to "Главная страница" , '/place/main' %> | <%= link_to "Выход" , '/session/auth' %> </br>
+<%= "Пользователь:  #{User.find_by_id(session[:current_user_id]).login}" if session[:current_user_id] %>
+<%= 'Неавторизованный пользователь' if !session[:current_user_id] %>
+
+<%= yield %>
+
+</body>
+</html>

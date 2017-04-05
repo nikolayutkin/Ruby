@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+   <title>Состав базы</title>
+   <description>Даты последних изменений</description>
+   <link><%= link_to "RSS feed", params.merge(:format => :rss), :class => "feed_link" %></link>
+   <pubDate><%= DateTime.now %></pubDate>
+   <% @result.each do |i| %>
+   <item>
+     <title><%= "Пользователь #{i.login}" %></title>
+     <description>
+        <%= "Последний раз изменял свое местоположение в базе #{i.updated_at}" %>
+      </description>
+     <link><%= link_to "RSS feed", params.merge(:format => :rss), :class => "feed_link" %></link>
+     <pubDate><%= DateTime.now %></pubDate>
+   </item>
+  </channel>
+  <% end %>
+</rss>

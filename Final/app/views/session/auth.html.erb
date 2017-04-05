@@ -1,0 +1,17 @@
+<div class="fld">
+<h1>Авторизация</h1>
+<h5>Логин и пароль выдаются администратором.</h5>
+</div>
+<%= form_tag("/session/login", :method => "get") do %>
+<div class="fld">
+&nbsp&nbsp<%= label_tag("Логин :") %>
+<%= text_field_tag(:l) %>
+</div> <br/>
+<div class="fld">
+<%= label_tag("Пароль :") %>
+<%= text_field_tag(:p) %>
+</div> <br/>
+<div class="fld">
+<%= submit_tag("Продолжить") %>
+<% end %>
+</div>

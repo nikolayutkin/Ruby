@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Логин:</strong>
+  <%= @user.login %>
+</p>
+
+<p>
+  <strong>Пароль:</strong>
+  <%= @user.password %>
+</p>
+
+<p>
+  <strong>X:</strong>
+  <%= @user.x %>
+</p>
+
+<p>
+  <strong>Y:</strong>
+  <%= @user.y %>
+</p>
+
+<%= link_to 'Изменить', edit_user_path(@user) %> |
+<%= link_to 'Назад', users_path %>
